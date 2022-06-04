@@ -26,9 +26,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Vector;
-//import javafx.embed.swing.SwingFXUtils;
-//import javafx.
-//import org.openjfx:javafx-swing
 
 
 public class Controller {
@@ -88,13 +85,7 @@ public class Controller {
 
         //terminalLogoPreviewVBox setup
         {
-            for(int i=0; i<Main.lineNumber; i++) {
-                ImageView imageView = new ImageView(terminalLogoPath.get(i));
-                imageView.setFitWidth(80);
-                imageView.setFitHeight(80);
-                terminalLogoPreviewVBox.getChildren().add(new VBox(new Label("  " + Main.lineColorName.get(i)), imageView));
-            }
-            terminalLogoPreviewVBox.getChildren().add(new VBox(new Label()));
+            terminalLogoPreviewVBoxUpdate();
         }
     }
 
@@ -129,7 +120,7 @@ public class Controller {
     }
 
     @FXML
-    void MenuItemSave(ActionEvent event) {
+    void MenuItemReturn(ActionEvent event) {
 //something here
         try {
             Stage stage = (Stage) borderPane.getScene().getWindow();
@@ -202,14 +193,45 @@ public class Controller {
         //System.out.println("OK");
         Stage newStage = new Stage();
         Button closeButton = new Button("Confirm");
-        closeButton.setOnAction(e -> {newStage.close();});
+        closeButton.setOnAction(e -> {
+            terminalLogoPreviewVBoxUpdate();
+            newStage.close();
+        });
 
         VBox newVBox = new VBox();
         newVBox.setPadding(new Insets(10));
         newVBox.setSpacing(10);
-        newVBox.getChildren().addAll(new ToolBar(closeButton), new Label("123"), new Label("165"));
+        //button and a label
+        newVBox.getChildren().add(new ToolBar(closeButton));
+        for(int i=0; i<Main.lineNumber; i++) {
+            VBox temp = new VBox();
+            temp.setPadding(new Insets(10));
+            temp.setSpacing(10);
 
-        newStage.setScene(new Scene(newVBox, 1200, 800));
+            Label displayPathLabel = new Label(Controller.terminalLogoPath.get(i));
+            Button selectPathButton = new Button("select file");
+            ImageView imageToDisplay = new ImageView();
+            imageToDisplay.setImage(new Image(displayPathLabel.getText()));
+            imageToDisplay.setFitWidth(120);
+            imageToDisplay.setFitHeight(120);
+            FileChooser fileChooser = new FileChooser();
+            selectPathButton.setOnAction(e -> {
+                File fileToSave = fileChooser.showSaveDialog(newStage);
+                if(fileToSave != null) {
+                    int idx = terminalLogoPath.indexOf(displayPathLabel.getText());
+                    System.out.println("index" + idx);
+                    terminalLogoPath.set(idx, fileToSave.toURI().toString());
+                    displayPathLabel.setText(terminalLogoPath.get(idx));
+                    imageToDisplay.setImage(new Image(fileToSave.toURI().toString()));
+                    //terminalLogoPath.get(i) =fileToSave.toURI().toString();
+                }
+            });
+
+            temp.getChildren().addAll(new Label(Main.lineColorName.get(i)), displayPathLabel, selectPathButton, imageToDisplay);
+            newVBox.getChildren().add(temp);
+        }
+
+        newStage.setScene(new Scene(new ScrollPane(newVBox), 1200, 800));
         newStage.showAndWait();
     }
 
@@ -260,5 +282,16 @@ public class Controller {
                 ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
             }
         } catch (IOException e) {}
+    }
+
+    private void terminalLogoPreviewVBoxUpdate() {
+        terminalLogoPreviewVBox.getChildren().clear();
+        for(int i=0; i<Main.lineNumber; i++) {
+            ImageView imageView = new ImageView(terminalLogoPath.get(i));
+            imageView.setFitWidth(80);
+            imageView.setFitHeight(80);
+            terminalLogoPreviewVBox.getChildren().add(new VBox(new Label("  " + Main.lineColorName.get(i)), imageView));
+        }
+        terminalLogoPreviewVBox.getChildren().add(new VBox(new Label()));
     }
 }

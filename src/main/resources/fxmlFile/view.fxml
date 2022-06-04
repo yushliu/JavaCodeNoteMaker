@@ -18,7 +18,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#MenuItemSave" text="Save" />
+              <MenuItem mnemonicParsing="false" onAction="#MenuItemReturn" text="Return" />
                   <MenuItem mnemonicParsing="false" onAction="#MenuItemSaveAs" text="Save as" />
             </items>
           </Menu>
