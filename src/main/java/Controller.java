@@ -16,7 +16,7 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import org.controlsfx.control.spreadsheet.SpreadsheetCell;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -46,12 +46,12 @@ public class Controller {
 
     static public Vector<String> terminalLogoPath = new Vector<>();
     static {
-        terminalLogoPath.add("file:src/main/resources/com/photo/terminalPicture/"+ "redLineTerminal" + ".png");
-        terminalLogoPath.add("file:src/main/resources/com/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
-        terminalLogoPath.add("file:src/main/resources/com/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
         //orange green need to change
-        terminalLogoPath.add("file:src/main/resources/com/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
-        terminalLogoPath.add("file:src/main/resources/com/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
     }
 
     public static int curLineManageCenterListView = -1;

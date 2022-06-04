@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Vector;
 import javafx.embed.swing.*;
@@ -23,12 +24,23 @@ public class Main extends Application {
     static int paneHeight = 0;
     @Override
     public void start(Stage stage) throws IOException {
-        new Stage().show();
-        /*
-        FXMLLoader startPagefxmlLoader = new FXMLLoader(Main.class.getResource("startPage.fxml"));
+        FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("../resources/fxmlFile/startPage.fxml")));
         Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
         stage.setScene(startPageScene);
-        stage.show();*/
+        stage.show();
+        //new Stage().show();
+
+
+
+
+
+
+        //file:src/main/resources/fxmlFile/
+        //FXMLLoader startPagefxmlLoader = new FXMLLoader(getClass().getResource("file:src/main/resources/fxmlFile/startPage.fxml"));
+        //FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("startPage.fxml")));
+        //Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
+        //stage.setScene(startPageScene);
+        //stage.show();
     }
 
     public static void main(String[] args) {launch();}

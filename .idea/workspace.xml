@@ -2,10 +2,163 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="104f0854-db69-4fea-8135-9b78d2d2e058" name="Changes" comment="sdf">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmlFile/startPage.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fxmlFile/view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/photo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/AlgorithmStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/AlgorithmStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/CentralStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/CentralStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ClassStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ClassStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/CompressedImportButtonLogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DFS_BFSStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DFS_BFSStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DataTypeStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DataTypeStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DesktopBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DesktopBackground.xcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DesktopBackgroundold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DistributedStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/DistributedStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/EncapsulationStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/EncapsulationStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ExceptionStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ExceptionStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/GPUStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/GPUStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/GraphStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/GraphStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/HashStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/HashStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ImportButtonLogo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/InheritanceStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/InheritanceStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/InterfaceStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/InterfaceStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/MPIStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/MPIStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/MRTRED.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/OpenMPStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/OpenMPStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/PolymorphismStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/PolymorphismStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/TerminalPageBackground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ThreadStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/ThreadStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/TreeStation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/TreeStation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/by20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/cover/temp.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/cover/temp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0101.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0103.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0104.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0105.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0201.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0202.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0203.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0204.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0205.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0302.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0303.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0304.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/house0305.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/red - 複製.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/photo/yellow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/terminalPicture/blueLineTerminal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/terminalPicture/redLineTerminal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/terminalPicture/yellowLineTerminal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/photo/test.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/fxmlFile/startPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/fxmlFile/view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/photo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/AlgorithmStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/AlgorithmStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/CentralStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/CentralStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ClassStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ClassStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/CompressedImportButtonLogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DFS_BFSStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DFS_BFSStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DataTypeStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DataTypeStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DesktopBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DesktopBackground.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DesktopBackgroundold.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DistributedStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/DistributedStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/EncapsulationStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/EncapsulationStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ExceptionStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ExceptionStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/GPUStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/GPUStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/GraphStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/GraphStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/HashStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/HashStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ImportButtonLogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/InheritanceStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/InheritanceStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/InterfaceStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/InterfaceStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/MPIStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/MPIStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/MRTRED.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/OpenMPStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/OpenMPStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/PolymorphismStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/PolymorphismStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/TerminalPageBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ThreadStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/ThreadStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/TreeStation.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/TreeStation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/by20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/cover/temp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/cover/temp.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0101.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0102.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0103.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0104.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0105.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0201.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0202.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0203.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0204.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0205.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0301.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0302.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0303.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0304.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/house0305.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/red - 複製.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/photo/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/terminalPicture/blueLineTerminal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/terminalPicture/redLineTerminal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/terminalPicture/yellowLineTerminal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/photo/test.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +179,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -61,7 +215,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654358795162</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sdf">
+      <created>1654359018969</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654359018969</updated>
+    </task>
+    <task id="LOCAL-00003" summary="sdf">
+      <created>1654359106814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654359106814</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
