@@ -20,6 +20,7 @@ import javafx.stage.Window;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Vector;
 //import javafx.embed.swing.SwingFXUtils;
 //import javafx.
@@ -125,6 +126,21 @@ public class Controller {
 
     @FXML
     void MenuItemSave(ActionEvent event) {
+
+        try {
+            Stage stage = (Stage) borderPane.getScene().getWindow();
+            stage.close();
+
+            FXMLLoader startPagefxmlLoader = new FXMLLoader(Main.class.getResource("startPage.fxml"));
+            Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
+            Stage primaryStage = new Stage();
+            primaryStage.setScene(startPageScene);
+            primaryStage.show();
+        } catch (IOException e) {}
+
+
+        ;
+        /*
         ((Stage)Stage.getWindows().stream().filter(Window::isShowing).findFirst().orElse(null)).close();
 
         try {
@@ -133,7 +149,7 @@ public class Controller {
             Stage primaryStage = new Stage();
             primaryStage.setScene(startPageScene);
             primaryStage.show();
-        } catch (IOException e) {e.printStackTrace();}
+        } catch (IOException e) {e.printStackTrace();}*/
     }
 
     @FXML
