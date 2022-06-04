@@ -23,7 +23,8 @@ public class startPageController {
 
     @FXML
     void importFromLocalButtonOnAction(ActionEvent event) {
-        System.out.println(1);
+
+
     }
 
     @FXML
@@ -73,5 +74,9 @@ public class startPageController {
             Scene scene = new Scene(fxmlLoader.load(), 1700, 800);
             stage.setScene(scene);
         } catch (IOException e2) {}
+    }
+
+    private void launchPageAndImportFromLocal(ActionEvent event) {
+
     }
 }

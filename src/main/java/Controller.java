@@ -22,6 +22,7 @@ import javafx.stage.Window;
 
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -52,8 +53,8 @@ public class Controller {
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
         //orange green need to change
-        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
-        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "orangeLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "greenLineTerminal" + ".png");
     }
 
     public static int curLineManageCenterListView = -1;
@@ -273,15 +274,35 @@ public class Controller {
                     "image files (*.png)", "*.png");
             fileChooser.getExtensionFilters().add(extFilter);
             File file = fileChooser.showSaveDialog(new Stage());
+            File saveTerminalInfoFile;
 
             if (file != null) {
                 String fileName = file.getName();
                 if (!fileName.toUpperCase().endsWith(".PNG")) {
+                    //change: dont't use txt
+                    saveTerminalInfoFile = new File(file.getAbsolutePath() + "TerminalInfo.txt");
                     file = new File(file.getAbsolutePath() + ".png");
+                    saveTerminalInfo(saveTerminalInfoFile);
                 }
                 ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
             }
         } catch (IOException e) {}
+    }
+
+    private void saveTerminalInfo(File file) {
+        //file.
+        try {
+            file.createNewFile();
+            FileWriter fileWriter = new FileWriter(file);
+
+            for(int i=0; i<Main.paneWidth; i++) {
+                for(int j=0; j<Main.paneHeight; j++) {
+                    fileWriter.write(((BlockPane)gridPane.getChildren().get(i+j*Main.paneHeight)).getInfoToSave());
+                }
+            }
+
+            fileWriter.close();
+        } catch (IOException e) {e.printStackTrace();}
     }
 
     private void terminalLogoPreviewVBoxUpdate() {

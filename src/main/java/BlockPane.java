@@ -15,7 +15,6 @@ public class BlockPane extends VBox {
     private int i;
     private int j;
     private Label label;
-    //private ComboBox<Integer> level = new ComboBox<>();
     private TextArea nameTextArea = new TextArea("enter name");
     private ListView<ButtonListView> lineManageCenterListView;
 
@@ -25,8 +24,6 @@ public class BlockPane extends VBox {
         comboBox.getItems().add("Station");
         comboBox.getItems().add("left clear");
         comboBox.getItems().add("");
-        //comboBox.getItems().add("Background");
-        //comboBox.getItems().add("Railroad");
     }
 
     private ComboBox<String> subChoiceComboBox = new ComboBox<>();
@@ -125,5 +122,21 @@ public class BlockPane extends VBox {
         }
     }
 
+    public String getInfoToSave() {
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append(i + "|" + j);
+
+
+        if(addCheckBox.selectedProperty().getValue()) {
+            System.out.println("selected");
+            stringBuffer.append("|" + comboBox.getValue().toString() + "|" + subChoiceComboBox.getValue().toString());
+        } else {
+            System.out.println("not selected");
+        }
+
+        stringBuffer.append("\n");
+
+        return stringBuffer.toString();
+    }
 
 }
