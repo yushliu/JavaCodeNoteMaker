@@ -46,7 +46,7 @@ public class Controller {
 
     static public Vector<String> terminalLogoPath = new Vector<>();
     static {
-        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
         //orange green need to change

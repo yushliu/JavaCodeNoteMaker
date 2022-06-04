@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.Optional;
 
 public class startPageController {
@@ -67,7 +68,8 @@ public class startPageController {
 
     private void launchPage(ActionEvent event) {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("view.fxml"));
+        //FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("../resources/fxmlFile/startPage.fxml")));
+        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/view.fxml")));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 1700, 800);
             stage.setScene(scene);
