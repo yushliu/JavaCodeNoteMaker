@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.makerjavacodenote.Controller">
+   <top>
+      <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#MenuItemSave" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#MenuItemSaveAs" text="Save as" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#MenuItemInsertRow" text="Insert row" />
+                  <MenuItem mnemonicParsing="false" onAction="#MenuItemInsertColumn" text="Insert Column" />
+                  <MenuItem mnemonicParsing="false" text="Remove row" />
+                  <MenuItem mnemonicParsing="false" text="Remove Column" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Terminal">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#MenuitemCustomizeTerminal" text="Customize terminal" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Preview">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#previewMenuItem" text="Show Preview In Window" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <HBox prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefWidth="120.0" spacing="5.0">
+               <children>
+                  <Label text="Preview" />
+                  <Label text="Terminal" />
+                  <ScrollPane>
+                     <content>
+                        <VBox fx:id="terminalLogoPreviewVBox" prefHeight="780.0" prefWidth="90.0" spacing="10.0">
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding></VBox>
+            <VBox prefWidth="120.0" spacing="5.0">
+               <children>
+                  <Label text="Line" />
+                  <Label text="Manage Center" />
+                  <ComboBox fx:id="lineComboBox" onAction="#lineComboBoxOnAction" prefHeight="35.0" prefWidth="150.0" />
+                  <ListView fx:id="lineManageCenterListView" prefHeight="700.0" prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <ScrollPane fx:id="scrollPane" pannable="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <padding>
+      <Insets bottom="5.0" top="5.0" />
+   </padding>
+</BorderPane>

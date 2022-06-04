@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.makerjavacodenote.startPageController">
+   <children>
+      <Label layoutX="601.0" layoutY="96.0" text="Java Code Note Maker">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Button layoutX="449.0" layoutY="376.0" mnemonicParsing="false" onAction="#newProjectButtonOnAction" text="New Project">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="1107.0" layoutY="369.0" mnemonicParsing="false" onAction="#importFromLocalButtonOnAction" text="Import from Local">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button layoutX="28.0" layoutY="735.0" mnemonicParsing="false" onAction="#ExitButtonOnAction" text="Exit">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
