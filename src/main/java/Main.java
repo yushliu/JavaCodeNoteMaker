@@ -28,19 +28,6 @@ public class Main extends Application {
         Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
         stage.setScene(startPageScene);
         stage.show();
-        //new Stage().show();
-
-
-
-
-
-
-        //file:src/main/resources/fxmlFile/
-        //FXMLLoader startPagefxmlLoader = new FXMLLoader(getClass().getResource("file:src/main/resources/fxmlFile/startPage.fxml"));
-        //FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("startPage.fxml")));
-        //Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
-        //stage.setScene(startPageScene);
-        //stage.show();
     }
 
     public static void main(String[] args) {launch();}
