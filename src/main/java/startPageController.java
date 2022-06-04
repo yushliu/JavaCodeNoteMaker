@@ -68,7 +68,6 @@ public class startPageController {
 
     private void launchPage(ActionEvent event) {
         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        //FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("../resources/fxmlFile/startPage.fxml")));
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/view.fxml")));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 1700, 800);

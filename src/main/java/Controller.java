@@ -2,6 +2,7 @@ package main.java;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,10 +15,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
 
+import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -48,7 +51,7 @@ public class Controller {
 
     static public Vector<String> terminalLogoPath = new Vector<>();
     static {
-        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
+        terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
         //orange green need to change
@@ -146,14 +149,44 @@ public class Controller {
             System.out.println("null");
         } else {
             System.out.println("not null");
-            /*
+
             WritableImage image = previewGridPaneToSave.snapshot(new SnapshotParameters(), null);
+            try {
+                //if(previewGridPaneToSave != null) saveImageFile(image, (Stage) previewGridPaneToSave.getScene().getWindow());
+                Stage stage = (Stage) previewGridPaneToSave.getScene().getWindow();
+
+                FileChooser fileChooser = new FileChooser();
+
+                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+                        "image files (*.png)", "*.png");
+                fileChooser.getExtensionFilters().add(extFilter);
+
+                File file = fileChooser.showSaveDialog(stage);
+
+                if (file != null) {
+                    String fileName = file.getName();
+
+                    if (!fileName.toUpperCase().endsWith(".PNG")) {
+                        file = new File(file.getAbsolutePath() + ".png");
+                    }
+
+                    // PixelReader pixelReader = image.getPixelReader();
+                    // int width = (int) image.getWidth();
+                    // int height = (int) image.getHeight();
+                    // WritableImage writableImage = new WritableImage(pixelReader, width, height);
+
+                    ImageIO.write(SwingFXUtils.fromFXImage(image, null),
+                            "png", file);
+                }
+            } catch (IOException e) {}
+            //saveImageFile(image, (Stage) borderPane.getScene().getWindow());
+            /*
             //"file:src/main/resources/com/photo/desktopTerminalPicture/"+ "one" + ".png"
             //File file = new File("D:\\anchor.png");
             //previewGridPaneToSave
-            File file = new File("file:src/main/resources/com/photo/desktopTerminalPicture/"+ "one" + ".png");
-            ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
-            */
+            File file = new File("file:src/main/resources/photo/desktopTerminalPicture/"+ "one" + ".png");
+            ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
+
       }
         /*
         WritableImage image = anchorPane.snapshot(new SnapshotParameters(), null);
@@ -161,6 +194,10 @@ public class Controller {
         File file = new File("D:\\anchor.png");
 
         ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
+    }
+
+    private void saveImageFile(WritableImage writableImage, Stage stage) throws IOException {
+
     }
 
     @FXML
