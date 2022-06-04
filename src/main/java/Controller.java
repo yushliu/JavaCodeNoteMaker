@@ -47,7 +47,7 @@ public class Controller {
     private ComboBox<String> lineComboBox;
     @FXML
     private VBox terminalLogoPreviewVBox;
-    private GridPane previewGridPaneToSave;
+    //private GridPane previewGridPaneToSave;
 
     static public Vector<String> terminalLogoPath = new Vector<>();
     static {
@@ -130,7 +130,7 @@ public class Controller {
 
     @FXML
     void MenuItemSave(ActionEvent event) {
-
+//something here
         try {
             Stage stage = (Stage) borderPane.getScene().getWindow();
             stage.close();
@@ -145,59 +145,7 @@ public class Controller {
 
     @FXML
     void MenuItemSaveAs(ActionEvent event) {
-        if(previewGridPaneToSave==null) {
-            System.out.println("null");
-        } else {
-            System.out.println("not null");
-
-            WritableImage image = previewGridPaneToSave.snapshot(new SnapshotParameters(), null);
-            try {
-                //if(previewGridPaneToSave != null) saveImageFile(image, (Stage) previewGridPaneToSave.getScene().getWindow());
-                Stage stage = (Stage) previewGridPaneToSave.getScene().getWindow();
-
-                FileChooser fileChooser = new FileChooser();
-
-                FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
-                        "image files (*.png)", "*.png");
-                fileChooser.getExtensionFilters().add(extFilter);
-
-                File file = fileChooser.showSaveDialog(stage);
-
-                if (file != null) {
-                    String fileName = file.getName();
-
-                    if (!fileName.toUpperCase().endsWith(".PNG")) {
-                        file = new File(file.getAbsolutePath() + ".png");
-                    }
-
-                    // PixelReader pixelReader = image.getPixelReader();
-                    // int width = (int) image.getWidth();
-                    // int height = (int) image.getHeight();
-                    // WritableImage writableImage = new WritableImage(pixelReader, width, height);
-
-                    ImageIO.write(SwingFXUtils.fromFXImage(image, null),
-                            "png", file);
-                }
-            } catch (IOException e) {}
-            //saveImageFile(image, (Stage) borderPane.getScene().getWindow());
-            /*
-            //"file:src/main/resources/com/photo/desktopTerminalPicture/"+ "one" + ".png"
-            //File file = new File("D:\\anchor.png");
-            //previewGridPaneToSave
-            File file = new File("file:src/main/resources/photo/desktopTerminalPicture/"+ "one" + ".png");
-            ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
-
-      }
-        /*
-        WritableImage image = anchorPane.snapshot(new SnapshotParameters(), null);
-
-        File file = new File("D:\\anchor.png");
-
-        ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
-    }
-
-    private void saveImageFile(WritableImage writableImage, Stage stage) throws IOException {
-
+        previewMenuItemAndSave();
     }
 
     @FXML
@@ -222,7 +170,6 @@ public class Controller {
         pGridPane.setVgap(10);
         pGridPane.setHgap(10);
         pScrollPane.setContent(pGridPane);
-        previewGridPaneToSave = gridPane;
 
         for(int i=0; i<Main.paneWidth; i++) {
             for(int j=0; j<Main.paneHeight; j++) {
@@ -242,36 +189,11 @@ public class Controller {
             for(ButtonListView temp: lineStation[i]) {
                 ImageView imageView = new ImageView();
                 imageView.setImage(new Image(terminalLogoPath.get(i)));
-                /*
-                switch (i) {
-                    //red
-                    case 0 -> {imageView.setImage(new Image(terminalLogoPath.get(0)));}
-                    //blue
-                    case 1 -> {imageView.setImage(new Image(terminalLogoPath.get(1)));}
-                    //yellow
-                    case 2 -> {imageView.setImage(new Image(terminalLogoPath.get(2)));}
-                    //orange
-                    case 3 -> {}
-                    //green
-                    case 4 -> {}
-                }*/
                 imageView.setFitWidth(150);
                 imageView.setFitHeight(150);
                 pGridPane.add(imageView, temp.getI(), temp.getJ());
             }
         }
-
-        /*
-        for(int i=0; i<Main.paneWidth; i++) {
-            for(int j=0; j<Main.paneHeight; j++) {
-                ImageView imageView = new ImageView( );
-                imageView.setImage(new Image("file:src/main/resources/com/photo/terminalPicture/"+ "blueLineTerminal" + ".png"));
-                imageView.setFitWidth(150);
-                imageView.setFitHeight(150);
-                pGridPane.add(imageView,i,j);
-            }
-        }*/
-
         stage.showAndWait();
     }
 
@@ -289,5 +211,54 @@ public class Controller {
 
         newStage.setScene(new Scene(newVBox, 1200, 800));
         newStage.showAndWait();
+    }
+
+    private void previewMenuItemAndSave() {
+        GridPane pGridPane = new GridPane();
+        ScrollPane pScrollPane = new ScrollPane();
+        pScrollPane.setPannable(true);
+        pGridPane.setPadding(new Insets(10, 10, 10, 10));
+        pGridPane.setVgap(10);
+        pGridPane.setHgap(10);
+        pScrollPane.setContent(pGridPane);
+
+        for(int i=0; i<Main.paneWidth; i++) {
+            for(int j=0; j<Main.paneHeight; j++) {
+                Label testLabel = new Label("used to create");
+                pGridPane.add(testLabel, i, j);
+                testLabel.setVisible(true);
+            }
+        }
+        for(int i=0; i<Main.paneWidth; i++) pGridPane.getColumnConstraints().add(new ColumnConstraints(150));
+        for(int j=0; j<Main.paneHeight; j++) pGridPane.getRowConstraints().add(new RowConstraints(150));
+
+        Scene scene = new Scene(pScrollPane, 1200, 800);
+
+        for(int i=0; i<Main.lineNumber; i++) {
+            for(ButtonListView temp: lineStation[i]) {
+                ImageView imageView = new ImageView();
+                imageView.setImage(new Image(terminalLogoPath.get(i)));
+                imageView.setFitWidth(150);
+                imageView.setFitHeight(150);
+                pGridPane.add(imageView, temp.getI(), temp.getJ());
+            }
+        }
+
+        WritableImage image = pGridPane.snapshot(new SnapshotParameters(), null);
+        try {
+            FileChooser fileChooser = new FileChooser();
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+                    "image files (*.png)", "*.png");
+            fileChooser.getExtensionFilters().add(extFilter);
+            File file = fileChooser.showSaveDialog(new Stage());
+
+            if (file != null) {
+                String fileName = file.getName();
+                if (!fileName.toUpperCase().endsWith(".PNG")) {
+                    file = new File(file.getAbsolutePath() + ".png");
+                }
+                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+            }
+        } catch (IOException e) {}
     }
 }
