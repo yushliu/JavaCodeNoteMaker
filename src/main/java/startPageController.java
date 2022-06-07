@@ -22,8 +22,12 @@ import java.util.Optional;
 public class startPageController {
 
     @FXML
-    void importFromLocalButtonOnAction(ActionEvent event) {
+    private Button importFromLocalButton;
 
+    @FXML
+    void importFromLocalButtonOnAction(ActionEvent event) {
+        System.out.println("press");
+        launchPage();
 
     }
 
@@ -76,7 +80,13 @@ public class startPageController {
         } catch (IOException e2) {}
     }
 
-    private void launchPageAndImportFromLocal(ActionEvent event) {
-
+    private void launchPage() {
+        //Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) importFromLocalButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/view.fxml")));
+        try {
+            Scene scene = new Scene(fxmlLoader.load(), 1700, 800);
+            stage.setScene(scene);
+        } catch (IOException e2) {}
     }
 }

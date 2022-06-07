@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="file://$MODULE_DIR$/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib" />
@@ -21,7 +21,10 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="javafx.fxml" level="project" />
-    <orderEntry type="library" exported="" name="javafx.swing" level="project" />
     <orderEntry type="library" exported="" name="javafx.controls" level="project" />
+    <orderEntry type="library" exported="" name="javafx.swing" level="project" />
+    <orderEntry type="library" exported="" name="javafx.web" level="project" />
+    <orderEntry type="library" exported="" name="javafx.base" level="project" />
+    <orderEntry type="library" exported="" name="lib" level="project" />
   </component>
 </module>
