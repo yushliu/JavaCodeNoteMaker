@@ -281,9 +281,16 @@ public class Controller {
                 if (!fileName.toUpperCase().endsWith(".PNG")) {
                     //change: dont't use txt
                     saveTerminalInfoFile = new File(file.getAbsolutePath() + "TerminalInfo.txt");
+                    System.out.println("in save path: ");
                     file = new File(file.getAbsolutePath() + ".png");
                     saveTerminalInfo(saveTerminalInfoFile);
+                } else {
+                    System.out.println("not in");
+                    saveTerminalInfoFile = new File(file.getAbsolutePath().substring(0, file.getAbsolutePath().indexOf(".")) + "TerminalInfo.txt");
+                    saveTerminalInfo(saveTerminalInfoFile);
+
                 }
+
                 ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
             }
         } catch (IOException e) {}
@@ -295,9 +302,14 @@ public class Controller {
             file.createNewFile();
             FileWriter fileWriter = new FileWriter(file);
 
+
+            fileWriter.write(Main.paneWidth + "\n");//width
+            fileWriter.write(Main.paneHeight + "\n");//height
+
+
             for(int i=0; i<Main.paneWidth; i++) {
                 for(int j=0; j<Main.paneHeight; j++) {
-                    fileWriter.write(((BlockPane)gridPane.getChildren().get(i+j*Main.paneHeight)).getInfoToSave());
+                    fileWriter.write(((BlockPane)gridPane.getChildren().get(i*Main.paneWidth+j)).getInfoToSave());
                 }
             }
 

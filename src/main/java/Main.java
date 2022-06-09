@@ -3,13 +3,6 @@ package main.java;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputDialog;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
@@ -22,6 +15,8 @@ import javafx.embed.swing.*;
 public class Main extends Application {
     static int paneWidth = 0;
     static int paneHeight = 0;
+    static Boolean ifImport = false;
+    static String importPath = "";
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/startPage.fxml")));

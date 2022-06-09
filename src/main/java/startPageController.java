@@ -12,10 +12,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -27,6 +28,41 @@ public class startPageController {
     @FXML
     void importFromLocalButtonOnAction(ActionEvent event) {
         System.out.println("press");
+        Main.ifImport = true;
+        //Main.importPath = "";
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open background file");
+        File importFile = fileChooser.showOpenDialog(new Stage());
+
+        if(importFile != null) {
+            try {
+                InputStreamReader reader = new InputStreamReader(new FileInputStream(importFile));
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                Main.paneWidth = Integer.parseInt(bufferedReader.readLine());
+                Main.paneHeight = Integer.parseInt(bufferedReader.readLine());
+            } catch(Exception e) {}
+        }
+
+        /*
+        if(importFile != null) {
+            try {
+
+                InputStreamReader reader = new InputStreamReader(new FileInputStream(importFile));
+                System.out.println("import file path: " + importFile.getAbsolutePath());
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String readLine = "";
+                readLine = bufferedReader.readLine();
+                while(readLine != null) {
+                    System.out.println(readLine);
+                    readLine = bufferedReader.readLine();
+                }
+
+            } catch (Exception e) {}
+
+        }*/
+
+
         launchPage();
 
     }
@@ -34,7 +70,7 @@ public class startPageController {
     @FXML
     void newProjectButtonOnAction(ActionEvent event) {
         setWidthAndHeight();
-        launchPage(event);
+        launchPage();
     }
 
     @FXML
@@ -71,17 +107,9 @@ public class startPageController {
         stage.showAndWait();
     }
 
-    private void launchPage(ActionEvent event) {
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/view.fxml")));
-        try {
-            Scene scene = new Scene(fxmlLoader.load(), 1700, 800);
-            stage.setScene(scene);
-        } catch (IOException e2) {}
-    }
-
     private void launchPage() {
         //Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+
         Stage stage = (Stage) importFromLocalButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/view.fxml")));
         try {
@@ -89,4 +117,16 @@ public class startPageController {
             stage.setScene(scene);
         } catch (IOException e2) {}
     }
+
+    /*
+    private void openFile(File file) {
+        try {
+            desktop.open(file);
+        } catch (IOException ex) {
+            Logger.getLogger(
+                    FileChooserSample.class.getName()).log(
+                    Level.SEVERE, null, ex
+            );
+        }
+    }*/
 }
