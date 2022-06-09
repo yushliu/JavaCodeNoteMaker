@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="104f0854-db69-4fea-8135-9b78d2d2e058" name="Changes" comment="不能輸出txt">
+    <list default="true" id="104f0854-db69-4fea-8135-9b78d2d2e058" name="Changes" comment="輸出txt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BlockPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BlockPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/startPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/startPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654597281689</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="輸出txt">
+      <created>1654783553497</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1654783553497</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +154,7 @@
     <MESSAGE value="sdf" />
     <MESSAGE value="backup" />
     <MESSAGE value="不能輸出txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="不能輸出txt" />
+    <MESSAGE value="輸出txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="輸出txt" />
   </component>
 </project>

@@ -128,10 +128,10 @@ public class BlockPane extends VBox {
 
 
         if(addCheckBox.selectedProperty().getValue()) {
-            System.out.println("selected");
+            //System.out.println("selected");
             stringBuffer.append("|" + comboBox.getValue().toString() + "|" + subChoiceComboBox.getValue().toString());
         } else {
-            System.out.println("not selected");
+            //System.out.println("not selected");
         }
 
         stringBuffer.append("\n");

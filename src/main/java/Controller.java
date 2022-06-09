@@ -20,10 +20,15 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 
 
+import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.Objects;
 import java.util.Vector;
@@ -270,13 +275,50 @@ public class Controller {
         WritableImage image = pGridPane.snapshot(new SnapshotParameters(), null);
         try {
             FileChooser fileChooser = new FileChooser();
+            /*
             FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
                     "image files (*.png)", "*.png");
-            fileChooser.getExtensionFilters().add(extFilter);
-            File file = fileChooser.showSaveDialog(new Stage());
-            File saveTerminalInfoFile;
+            fileChooser.getExtensionFilters().add(extFilter);*/
+            fileChooser.setTitle("select folder path");
+            File folderPath = fileChooser.showSaveDialog(new Stage());
+            //File saveTerminalInfoFile;
 
-            if (file != null) {
+            if (folderPath != null) {
+                if(folderPath.mkdir() == true) System.out.println("folder create successfully");
+                else System.out.println("folder create unsuccessfully");
+
+                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", new File(folderPath.getAbsolutePath() + "\\" + "Image.png"));
+                File saveTerminalInfoFile = new File(folderPath.getAbsolutePath() + "\\" + "info.txt");
+                saveTerminalInfo(saveTerminalInfoFile);
+
+
+                //copy terminal picture
+                for(int i=0; i<1; i++) {
+                    //Path source = Paths.get(terminalLogoPath.get(i));
+                    //Path target = Paths.get(folderPath.getAbsolutePath() + "\\" + "red.png");
+                    //Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                    //Files.copy(terminalLogoPath.get(i), folderPath.getAbsolutePath() + "\\", StandardCopyOption.REPLACE_EXISTING);
+                    File source = new File("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
+                    System.out.println("source: " + source.getAbsolutePath());
+                    if(source == null) System.out.println("source null");
+                    File target = new File(folderPath.getAbsolutePath() + "\\" + "red.png");
+                    target.createNewFile();
+                    if(target == null) {
+                        System.out.println("target is null");
+                        target.createNewFile();
+                    }
+                    System.out.println("target: " + target.getAbsolutePath());
+
+
+                    BufferedImage rett = ImageIO.read(source);
+                    IIOImage ok = new IIOImage(rett, null, null);
+                    RenderedImage renderedImage = ok.getRenderedImage();
+                    ImageIO.write(renderedImage, "png", target);
+                    //Files.copy(source.toPath(), target.toPath());
+                    //copyFileUsingFileStreams(source, target);
+                }
+
+                /*
                 String fileName = file.getName();
                 if (!fileName.toUpperCase().endsWith(".PNG")) {
                     //change: dont't use txt
@@ -291,9 +333,9 @@ public class Controller {
 
                 }
 
-                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
+                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
             }
-        } catch (IOException e) {}
+        } catch (Exception e) {}
     }
 
     private void saveTerminalInfo(File file) {
@@ -302,10 +344,8 @@ public class Controller {
             file.createNewFile();
             FileWriter fileWriter = new FileWriter(file);
 
-
             fileWriter.write(Main.paneWidth + "\n");//width
             fileWriter.write(Main.paneHeight + "\n");//height
-
 
             for(int i=0; i<Main.paneWidth; i++) {
                 for(int j=0; j<Main.paneHeight; j++) {
@@ -326,5 +366,24 @@ public class Controller {
             terminalLogoPreviewVBox.getChildren().add(new VBox(new Label("  " + Main.lineColorName.get(i)), imageView));
         }
         terminalLogoPreviewVBox.getChildren().add(new VBox(new Label()));
+    }
+
+
+    //test
+    private void copyFileUsingFileStreams(File source, File dest) throws IOException {
+        InputStream input = null;
+        OutputStream output = null;
+        try {
+            input = new FileInputStream(source);
+            output = new FileOutputStream(dest);
+            byte[] buf = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = input.read(buf)) > 0) {
+                output.write(buf, 0, bytesRead);
+            }
+        } finally {
+            input.close();
+            output.close();
+        }
     }
 }
