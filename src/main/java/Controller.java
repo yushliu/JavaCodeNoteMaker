@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -281,7 +282,6 @@ public class Controller {
             fileChooser.getExtensionFilters().add(extFilter);*/
             fileChooser.setTitle("select folder path");
             File folderPath = fileChooser.showSaveDialog(new Stage());
-            //File saveTerminalInfoFile;
 
             if (folderPath != null) {
                 if(folderPath.mkdir() == true) System.out.println("folder create successfully");
@@ -291,49 +291,24 @@ public class Controller {
                 File saveTerminalInfoFile = new File(folderPath.getAbsolutePath() + "\\" + "info.txt");
                 saveTerminalInfo(saveTerminalInfoFile);
 
-
                 //copy terminal picture
-                for(int i=0; i<1; i++) {
-                    //Path source = Paths.get(terminalLogoPath.get(i));
-                    //Path target = Paths.get(folderPath.getAbsolutePath() + "\\" + "red.png");
-                    //Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
-                    //Files.copy(terminalLogoPath.get(i), folderPath.getAbsolutePath() + "\\", StandardCopyOption.REPLACE_EXISTING);
-                    File source = new File("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
-                    System.out.println("source: " + source.getAbsolutePath());
-                    if(source == null) System.out.println("source null");
-                    File target = new File(folderPath.getAbsolutePath() + "\\" + "red.png");
-                    target.createNewFile();
-                    if(target == null) {
-                        System.out.println("target is null");
-                        target.createNewFile();
+                for(int i=0; i<Main.lineNumber; i++) {
+                    URL source = new URL(terminalLogoPath.get(i));
+                    System.out.println("target: " + source);
+                    BufferedImage bufferedImage = ImageIO.read(source);
+
+                    String path = folderPath.getAbsolutePath() + "\\";
+
+                    switch (i) {
+                        case 0 -> {path += "red.png";}
+                        case 1 -> {path += "blue.png";}
+                        case 2 -> {path += "yellow.png";}
+                        case 3 -> {path += "orange.png";}
+                        case 4 -> {path += "green.png";}
                     }
-                    System.out.println("target: " + target.getAbsolutePath());
-
-
-                    BufferedImage rett = ImageIO.read(source);
-                    IIOImage ok = new IIOImage(rett, null, null);
-                    RenderedImage renderedImage = ok.getRenderedImage();
-                    ImageIO.write(renderedImage, "png", target);
-                    //Files.copy(source.toPath(), target.toPath());
-                    //copyFileUsingFileStreams(source, target);
+                    File target = new File(path);
+                    ImageIO.write(bufferedImage, "png", target);
                 }
-
-                /*
-                String fileName = file.getName();
-                if (!fileName.toUpperCase().endsWith(".PNG")) {
-                    //change: dont't use txt
-                    saveTerminalInfoFile = new File(file.getAbsolutePath() + "TerminalInfo.txt");
-                    System.out.println("in save path: ");
-                    file = new File(file.getAbsolutePath() + ".png");
-                    saveTerminalInfo(saveTerminalInfoFile);
-                } else {
-                    System.out.println("not in");
-                    saveTerminalInfoFile = new File(file.getAbsolutePath().substring(0, file.getAbsolutePath().indexOf(".")) + "TerminalInfo.txt");
-                    saveTerminalInfo(saveTerminalInfoFile);
-
-                }
-
-                ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);*/
             }
         } catch (Exception e) {}
     }
