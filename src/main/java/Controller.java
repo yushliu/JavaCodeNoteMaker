@@ -422,7 +422,7 @@ public class Controller {
                 while(readLine != null) {
 
 
-                    Integer idx[] = new Integer[3];
+                    Integer idx[] = new Integer[4];
                     int cur = 0;
                     for(int i=0; i<readLine.length(); i++) {
                         if(readLine.charAt(i) == '|') {
@@ -438,6 +438,7 @@ public class Controller {
                     int j = 0;
                     String type = "";
                     String line = "";
+                    String name = "";
 
                     i = Integer.parseInt(readLine.substring(0, idx[0]));
                     if(idx[1]==null) j = Integer.parseInt(readLine.substring(idx[0]+1, readLine.length()));
@@ -449,11 +450,17 @@ public class Controller {
 
                     if(idx[2]!=null) {
                         line = readLine.substring(idx[2]+1, readLine.length());
+                        //line = readLine.substring(idx[2]+1, idx[3]);
+                    }
+
+
+                    if(idx[3]!=null) {
+                        name = readLine.substring(idx[3]+1, readLine.length());
                     }
 
                     if(idx[2] != null) {
                         System.out.println("line " + line);
-                        ((BlockPane)gridPane.getChildren().get(i*Main.paneWidth+j)).insertToPane(i, j, type, line);
+                        ((BlockPane)gridPane.getChildren().get(i+j*Main.paneHeight)).insertToPane(i, j, type, line, name);
                     }
 
 

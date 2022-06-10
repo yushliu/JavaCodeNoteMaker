@@ -154,6 +154,8 @@ public class BlockPane extends VBox {
 
         if(addCheckBox.selectedProperty().getValue()) {
             //System.out.println("selected");
+            //stringBuffer.append("|" + comboBox.getValue().toString() + "|" + subChoiceComboBox.getValue().toString() + "|" + nameTextArea.getText());
+            System.out.println("name " + nameTextArea.getText());
             stringBuffer.append("|" + comboBox.getValue().toString() + "|" + subChoiceComboBox.getValue().toString());
         } else {
             //System.out.println("not selected");
@@ -164,7 +166,7 @@ public class BlockPane extends VBox {
         return stringBuffer.toString();
     }
 
-    public void insertToPane(int i, int j, String type, String line) {
+    public void insertToPane(int i, int j, String type, String line, String name) {
         if(this.i != i || this.j != j) {
             System.out.println("i j error");
         }
@@ -185,6 +187,7 @@ public class BlockPane extends VBox {
             case "orange" -> {choice = 3;break;}
             case "green" -> {choice = 4;break;}
         }
+        //nameTextArea.setText(name);
         System.out.println("choice " + choice);
         //Controller.lineStation[choice].add(new ButtonListView(nameTextArea.getText(), this.i, this.j, subChoiceComboBox.getValue()));
         addCheckBox.selectedProperty().setValue(true);
