@@ -62,6 +62,7 @@ public class Controller {
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "orangeLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "greenLineTerminal" + ".png");
     }
+    static public String blankLogoPath = "file:src/main/resources/photo/terminalPicture/"+ "blank" + ".png";
 
     public static int curLineManageCenterListView = -1;
 
@@ -93,6 +94,30 @@ public class Controller {
         //terminalLogoPreviewVBox setup
         {
             terminalLogoPreviewVBoxUpdate();
+        }
+
+        if(Main.ifImport) {
+            Main.ifImport = false;
+            if(Main.importPath != null) {
+
+                String directoryPath = Main.importPath;
+                terminalLogoPath.set(0, Main.importPath + "red.png");
+                System.out.println("red: " + Main.importPath + "red.png");
+                terminalLogoPath.set(1, Main.importPath + "blue.png");
+                terminalLogoPath.set(2, Main.importPath + "yellow.png");
+                terminalLogoPath.set(3, Main.importPath + "orange.png");
+                terminalLogoPath.set(4, Main.importPath + "green.png");
+
+                //terminalLogoPreviewVBoxUpdate();
+                terminalLogoPreviewVBoxUpdate();
+
+                readTerminalInfo(Main.importPath + "info.txt");
+
+                Main.importPath = null;
+                System.out.println("import path success");
+            } else {
+                System.out.println("import path error");
+            }
         }
     }
 
@@ -182,6 +207,15 @@ public class Controller {
         Scene scene = new Scene(pScrollPane, 1200, 800);
         stage.setScene(scene);
 
+        for(int i=0; i<Main.paneWidth; i++) {
+            for(int j=0; j<Main.paneHeight; j++) {
+                ImageView imageView = new ImageView();
+                imageView.setImage(new Image(blankLogoPath));
+                imageView.setFitWidth(150);
+                imageView.setFitHeight(150);
+                pGridPane.add(imageView, i, j);
+            }
+        }
 
         for(int i=0; i<Main.lineNumber; i++) {
             for(ButtonListView temp: lineStation[i]) {
@@ -262,6 +296,16 @@ public class Controller {
         for(int j=0; j<Main.paneHeight; j++) pGridPane.getRowConstraints().add(new RowConstraints(150));
 
         Scene scene = new Scene(pScrollPane, 1200, 800);
+
+        for(int i=0; i<Main.paneWidth; i++) {
+            for(int j=0; j<Main.paneHeight; j++) {
+                ImageView imageView = new ImageView();
+                imageView.setImage(new Image(blankLogoPath));
+                imageView.setFitWidth(150);
+                imageView.setFitHeight(150);
+                pGridPane.add(imageView, i, j);
+            }
+        }
 
         for(int i=0; i<Main.lineNumber; i++) {
             for(ButtonListView temp: lineStation[i]) {
@@ -359,6 +403,64 @@ public class Controller {
         } finally {
             input.close();
             output.close();
+        }
+    }
+
+    private void readTerminalInfo(String path) {
+        File file = new File(path);
+        if(file != null) {
+
+            try {
+                InputStreamReader reader = new InputStreamReader(new FileInputStream(new File(Main.importPath + "info.txt")));
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String readLine;
+                readLine = bufferedReader.readLine();
+                System.out.println("width: " + readLine);
+                readLine = bufferedReader.readLine();
+                System.out.println("height: " + readLine);
+
+                readLine = bufferedReader.readLine();
+                while(readLine != null) {
+
+
+                    Integer idx[] = new Integer[3];
+                    int cur = 0;
+                    for(int i=0; i<readLine.length(); i++) {
+                        if(readLine.charAt(i) == '|') {
+                            System.out.println("find |");
+                            idx[cur] = i;
+                            cur++;
+                        }
+                    }
+
+
+
+                    int i = 0;
+                    int j = 0;
+                    String type = "";
+                    String line = "";
+
+                    i = Integer.parseInt(readLine.substring(0, idx[0]));
+                    if(idx[1]==null) j = Integer.parseInt(readLine.substring(idx[0]+1, readLine.length()));
+                    else j = Integer.parseInt(readLine.substring(idx[0]+1, idx[1]));
+
+                    if(idx[2]!=null) {
+                        type = readLine.substring(idx[1]+1, idx[2]);
+                    }
+
+                    if(idx[2]!=null) {
+                        line = readLine.substring(idx[2]+1, readLine.length());
+                    }
+
+                    System.out.println(readLine);
+
+                    readLine = bufferedReader.readLine();
+                }
+
+            } catch(Exception e) {}
+
+        } else {
+            System.out.println("unable to read file since file is null");
         }
     }
 }

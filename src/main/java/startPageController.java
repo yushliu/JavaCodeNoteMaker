@@ -16,6 +16,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,11 +31,36 @@ public class startPageController {
         System.out.println("press");
         Main.ifImport = true;
         //Main.importPath = "";
+        JFileChooser jFileChooser = new JFileChooser();
+        jFileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        jFileChooser.showOpenDialog(null);
 
+        //System.out.println(jFileChooser.getSelectedFile() + "\\");
+        Main.importPath = jFileChooser.getSelectedFile() + "\\";
+        System.out.println(Main.importPath);
+
+        if(Main.importPath != null) {
+            try {
+                InputStreamReader reader = new InputStreamReader(new FileInputStream(new File(Main.importPath + "info.txt")));
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                Main.paneWidth = Integer.parseInt(bufferedReader.readLine());
+                Main.paneHeight = Integer.parseInt(bufferedReader.readLine());
+            } catch(Exception e) {}
+        }
+
+
+        /*
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Open background file");
-        File importFile = fileChooser.showOpenDialog(new Stage());
+        fileChooser.setTitle("Open directory");
+        //File importFile = fileChooser.showOpenDialog(new Stage());
 
+        File [] files = path.listFiles();
+
+        for(int i=0; i<files.length; i++) {
+            System.out.println(files[i].toString());
+        }*/
+
+        /*
         if(importFile != null) {
             try {
                 InputStreamReader reader = new InputStreamReader(new FileInputStream(importFile));
@@ -42,7 +68,7 @@ public class startPageController {
                 Main.paneWidth = Integer.parseInt(bufferedReader.readLine());
                 Main.paneHeight = Integer.parseInt(bufferedReader.readLine());
             } catch(Exception e) {}
-        }
+        }*/
 
         /*
         if(importFile != null) {
