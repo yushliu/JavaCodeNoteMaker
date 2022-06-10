@@ -110,6 +110,31 @@ public class BlockPane extends VBox {
         });
     }
 
+    private void comboBoxOnActionHandmade() {
+        if(comboBox.getValue() != null) {
+            switch (comboBox.getValue()) {
+                case "Central Station" -> {
+
+                }
+
+                case "Station" -> {
+                    this.getChildren().add(subChoiceComboBox);
+                    this.getChildren().add(nameTextArea);
+                    this.getChildren().add(addCheckBox);
+                    for(String str: Main.lineColorName) subChoiceComboBox.getItems().add(str);
+                }
+
+                case "left clear" -> {
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Warning");
+                    alert.setHeaderText("The block will no longer be available!");
+                    alert.setContentText("");
+                    alert.showAndWait().ifPresentOrElse(rs -> {if (rs == ButtonType.OK) this.setVisible(false);}, () -> {comboBox.setValue("");});
+                }
+            }
+        }
+    }
+
     public void setLineManageCenterListView(ListView<ButtonListView> lineManageCenterListView) {
         this.lineManageCenterListView = lineManageCenterListView;
     }
@@ -137,6 +162,33 @@ public class BlockPane extends VBox {
         stringBuffer.append("\n");
 
         return stringBuffer.toString();
+    }
+
+    public void insertToPane(int i, int j, String type, String line) {
+        if(this.i != i || this.j != j) {
+            System.out.println("i j error");
+        }
+
+        if(line == null) {
+            System.out.println("line null and return");
+            return;
+        }
+
+        comboBox.setValue(type);
+        comboBoxOnActionHandmade();
+        subChoiceComboBox.setValue(line);
+        int choice = -1;
+        switch (subChoiceComboBox.getValue()) {//red blue yellow orange green
+            case "red" -> {choice = 0; break;}
+            case "blue" -> {choice = 1;break;}
+            case "yellow" -> {choice = 2;break;}
+            case "orange" -> {choice = 3;break;}
+            case "green" -> {choice = 4;break;}
+        }
+        System.out.println("choice " + choice);
+        //Controller.lineStation[choice].add(new ButtonListView(nameTextArea.getText(), this.i, this.j, subChoiceComboBox.getValue()));
+        addCheckBox.selectedProperty().setValue(true);
+        updateLineManageCenterListView();
     }
 
 }

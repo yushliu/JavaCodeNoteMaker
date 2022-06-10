@@ -58,7 +58,6 @@ public class Controller {
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "redLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "blueLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "yellowLineTerminal" + ".png");
-        //orange green need to change
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "orangeLineTerminal" + ".png");
         terminalLogoPath.add("file:src/main/resources/photo/terminalPicture/"+ "greenLineTerminal" + ".png");
     }
@@ -452,7 +451,13 @@ public class Controller {
                         line = readLine.substring(idx[2]+1, readLine.length());
                     }
 
-                    System.out.println(readLine);
+                    if(idx[2] != null) {
+                        System.out.println("line " + line);
+                        ((BlockPane)gridPane.getChildren().get(i*Main.paneWidth+j)).insertToPane(i, j, type, line);
+                    }
+
+
+
 
                     readLine = bufferedReader.readLine();
                 }
