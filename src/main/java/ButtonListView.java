@@ -16,6 +16,10 @@ public class ButtonListView extends Button {
         this.line = line;
     }
 
+    public String getAllInfo() {
+        return (i+"|"+j+"|"+line+"|"+this.getText());
+    }
+
     public int getI() {
         return i;
     }

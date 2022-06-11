@@ -352,7 +352,36 @@ public class Controller {
                     File target = new File(path);
                     ImageIO.write(bufferedImage, "png", target);
                 }
+
+                //save line to folderpath
+                File saveRedLine = new File(folderPath.getAbsolutePath() + "\\" + "redLine.txt");
+                saveLineInfo(saveRedLine, 0);
+                File saveBlueLine = new File(folderPath.getAbsolutePath() + "\\" + "blueLine.txt");
+                saveLineInfo(saveBlueLine, 1);
+                File saveYellowLine = new File(folderPath.getAbsolutePath() + "\\" + "yellowLine.txt");
+                saveLineInfo(saveYellowLine, 2);
+                File saveOrangeLine = new File(folderPath.getAbsolutePath() + "\\" + "orangeLine.txt");
+                saveLineInfo(saveOrangeLine, 3);
+                File saveGreenLine = new File(folderPath.getAbsolutePath() + "\\" + "greenLine.txt");
+                saveLineInfo(saveGreenLine, 4);
+
             }
+        } catch (Exception e) {}
+    }
+
+    private void saveLineInfo(File file, int choice) {
+        try {
+
+            file.createNewFile();
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(Main.paneWidth + "\n");//width
+            fileWriter.write(Main.paneHeight + "\n");//height
+
+            for(ButtonListView buttonListView: lineStation[choice]) {
+                System.out.println(buttonListView.getAllInfo());
+                fileWriter.write(buttonListView.getAllInfo() + "\n");
+            }
+
         } catch (Exception e) {}
     }
 
@@ -449,8 +478,8 @@ public class Controller {
                     }
 
                     if(idx[2]!=null) {
-                        line = readLine.substring(idx[2]+1, readLine.length());
-                        //line = readLine.substring(idx[2]+1, idx[3]);
+                        //line = readLine.substring(idx[2]+1, readLine.length());
+                        line = readLine.substring(idx[2]+1, idx[3]);
                     }
 
 
