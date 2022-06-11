@@ -378,9 +378,10 @@ public class Controller {
             fileWriter.write(Main.paneHeight + "\n");//height
 
             for(ButtonListView buttonListView: lineStation[choice]) {
-                System.out.println(buttonListView.getAllInfo());
                 fileWriter.write(buttonListView.getAllInfo() + "\n");
             }
+
+            fileWriter.close();
 
         } catch (Exception e) {}
     }

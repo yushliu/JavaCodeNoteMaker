@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="104f0854-db69-4fea-8135-9b78d2d2e058" name="Changes" comment="backup">
+    <list default="true" id="104f0854-db69-4fea-8135-9b78d2d2e058" name="Changes" comment="final one">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BlockPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BlockPane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ButtonListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ButtonListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +34,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-18.0.1/lib",
+    "last_opened_file_path": "C:/Users/yushshl/Documents/課程內容/二下/JAVA程式設計/Project/MakerJavaCodeNote2",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.104058266",
     "project.structure.side.proportion": "0.2",
@@ -169,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654839333155</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="final one">
+      <created>1654921153982</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1654921153982</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +195,7 @@
     <MESSAGE value="輸出txt" />
     <MESSAGE value="輸出所有圖" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="final one" />
+    <option name="LAST_COMMIT_MESSAGE" value="final one" />
   </component>
 </project>
