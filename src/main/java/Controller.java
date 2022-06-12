@@ -158,7 +158,7 @@ public class Controller {
             stage.close();
 
             FXMLLoader startPagefxmlLoader = new FXMLLoader(Objects.requireNonNull(Main.class.getResource("../resources/fxmlFile/startPage.fxml")));
-            Scene startPageScene = new Scene(startPagefxmlLoader.load(), 1700, 800);
+            Scene startPageScene = new Scene(startPagefxmlLoader.load());
             Stage primaryStage = new Stage();
             primaryStage.setScene(startPageScene);
             primaryStage.show();
