@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.startPageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.startPageController">
    <children>
+      <ImageView fitHeight="650.0" fitWidth="1200.0" layoutY="250.0">
+         <image>
+            <Image url="@../photo/startPage.png" />
+         </image>
+      </ImageView>
       <Label layoutX="362.0" layoutY="197.0" text="Java Code Note Maker">
          <font>
             <Font size="45.0" />
          </font>
       </Label>
-      <Button layoutX="136.0" layoutY="676.0" mnemonicParsing="false" onAction="#newProjectButtonOnAction" text="New Project">
+      <Button layoutX="146.0" layoutY="676.0" mnemonicParsing="false" onAction="#newProjectButtonOnAction" text="New Project">
          <font>
             <Font size="21.0" />
          </font>
@@ -21,7 +29,7 @@
             <Font size="21.0" />
          </font>
       </Button>
-      <Button layoutX="63.0" layoutY="821.0" mnemonicParsing="false" onAction="#ExitButtonOnAction" text="Exit">
+      <Button layoutX="44.0" layoutY="817.0" mnemonicParsing="false" onAction="#ExitButtonOnAction" text="Exit">
          <font>
             <Font size="21.0" />
          </font>
